@@ -69,6 +69,16 @@ p{
     margin-bottom: 25px;
 }
 
+.tempDisplay{
+    margin-bottom: 1px;
+}
+
+.feellikeDisplay{
+    font-style: italic;
+    font-weight: bold;
+    size: 2rem;
+}
+
 .humidityDisplay{
     font-weight: bold;
     margin-bottom: 25px;
@@ -127,7 +137,49 @@ p{
     border-radius: 10px;
 }
 
+.feellikeB{
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: none;
+    border-radius: 5px;
+}
+
+.feellikeP{
+    align-items: center;
+    position: fixed;
+    font-size: 16px;
+    display: none;
+}
+
+.feellikeB:hover ~ .feellikeP {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: monospace;
+    background-color: white;
+    border: #333 solid 3px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .humidityDiv{
+    display: flex;
+    flex-direction: row;
+}
+
+.tempDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.feellikeDiv{
     display: flex;
     flex-direction: row;
 }

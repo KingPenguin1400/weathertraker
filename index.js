@@ -46,14 +46,18 @@ async function displayWeatherInfo(data) {
     console.log(data);
 
     const {name: city,
-            main: {temp, humidity},
+            main: {temp, humidity, feels_like},
             weather: [{description, id}]} = data;
 
     card.textContent = "";
     card.style.display = "flex";
 
     const cityDisplay = document.createElement("h1");
+    const tempDiv = document.createElement("div");
     const tempDisplay = document.createElement("p");
+    const feellikeDiv = document.createElement("div");
+    const feellikeDisplay = document.createElement("p");
+    const feellikeInfo = document.createElement("div");
     const humidityDiv = document.createElement("div");
     const humidityDisplay = document.createElement("p");
     const humidityInfo = document.createElement("div");
@@ -63,13 +67,19 @@ async function displayWeatherInfo(data) {
     
     cityDisplay.textContent = city;
     tempDisplay.textContent = `${((temp - 273.15) * (9/5) +32).toFixed(1)}°F`;
+    feellikeDisplay.textContent = `Feels Like: ${((feels_like - 273.15) * (9/5) +32).toFixed(1)}°F`;
+    feellikeInfo.innerHTML = `<button class="feellikeB">?</button>` + `<p class="feellikeP">"Feels like" temperature accounts for factors beyond air temperature, like wind and humidity, that affect how hot or cold it actually feels to the human body</p>`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
     humidityInfo.innerHTML = `<button class="humidityB">?</button>` + `<p class="humidityP">Humidity is a measure of water vapor in the air.</p>`;
     descDisplay.textContent = description;
     weatherEmoji.textContent = await getWeatherEmoji(id);
 
     cityDisplay.classList.add("cityDisplay");
+    tempDiv.classList.add("tempDiv");
     tempDisplay.classList.add("tempDisplay");
+    feellikeDiv.classList.add("feellikeDiv");
+    feellikeDisplay.classList.add("feellikeDisplay");
+    feellikeInfo.classList.add("feellikeInfo");
     humidityDiv.classList.add("humidityDiv");
     humidityDisplay.classList.add("humidityDisplay");
     descDisplay.classList.add("descDisplay");
@@ -77,10 +87,20 @@ async function displayWeatherInfo(data) {
     humidityInfo.classList.add("humidityInfo");
 
     card.appendChild(cityDisplay);
-    card.appendChild(tempDisplay);
+    card.appendChild(tempDiv);
+    tempDiv.appendChild(tempDisplay);
+    tempDiv.appendChild(feellikeDiv);
+    //tempDiv.appendChild(feellikeDisplay);
+    //tempDiv.appendChild(feellikeInfo);
+    feellikeDiv.appendChild(feellikeDisplay);
+    feellikeDiv.appendChild(feellikeInfo);
+    //card.appendChild(feellikeInfo);
+    //card.appendChild(tempDisplay);
+    //card.appendChild(feellikeDisplay);
     card.appendChild(humidityDiv);
     humidityDiv.appendChild(humidityDisplay);
     humidityDiv.appendChild(humidityInfo);
+    //card.appendChild(br0);
     //card.appendChild(humidityDisplay);
     //card.appendChild(humidityInfo);
     card.appendChild(descDisplay);
