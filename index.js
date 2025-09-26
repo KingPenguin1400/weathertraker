@@ -54,25 +54,35 @@ async function displayWeatherInfo(data) {
 
     const cityDisplay = document.createElement("h1");
     const tempDisplay = document.createElement("p");
+    const humidityDiv = document.createElement("div");
     const humidityDisplay = document.createElement("p");
+    const humidityInfo = document.createElement("div");
+    //const br0 = document.createElement("br");
     const descDisplay = document.createElement("p");
     const weatherEmoji = document.createElement("p");
-
+    
     cityDisplay.textContent = city;
     tempDisplay.textContent = `${((temp - 273.15) * (9/5) +32).toFixed(1)}°F`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
+    humidityInfo.innerHTML = `<button class="humidityB">?</button>` + `<p class="humidityP">Humidity is a measure of water vapor in the air.</p>`;
     descDisplay.textContent = description;
     weatherEmoji.textContent = await getWeatherEmoji(id);
 
     cityDisplay.classList.add("cityDisplay");
     tempDisplay.classList.add("tempDisplay");
+    humidityDiv.classList.add("humidityDiv");
     humidityDisplay.classList.add("humidityDisplay");
     descDisplay.classList.add("descDisplay");
     weatherEmoji.classList.add("weatherEmoji");
+    humidityInfo.classList.add("humidityInfo");
 
     card.appendChild(cityDisplay);
     card.appendChild(tempDisplay);
-    card.appendChild(humidityDisplay);
+    card.appendChild(humidityDiv);
+    humidityDiv.appendChild(humidityDisplay);
+    humidityDiv.appendChild(humidityInfo);
+    //card.appendChild(humidityDisplay);
+    //card.appendChild(humidityInfo);
     card.appendChild(descDisplay);
     card.appendChild(weatherEmoji);
 }
