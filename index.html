@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://app.youform.com/widgets/widget.js"></script>
 </head>
 <body>
 
+    
     <br><h1 id="headH1">Weather Tracker</h1>
     <form method="get" class="weatherForm">
         <input type="text" class="cityInput" name="city" placeholder="city name...">
         <button type="submit">Get Weather</button>
     </form>
 
+
     <div class="card" style="display: none;">
+
+
         <!--<h1 class="cityDisplay">Miami</h1>
         <div class="tempDiv">
             <p class="tempDisplay">90°</p>
@@ -48,7 +53,17 @@
         <input type="radio" name="temperatureInput" id="temperatureInput2" class="temperatureInput" value="celcius">
         <button onclick="updatetemp()" type="submit" class="submitTempInput">Update</button>
     </form>
+    <!--<div data-tf-live="01K68B5DS5HJWEX803NSWNV622"></div><script src="//embed.typeform.com/next/embed.js"></script>-->
+
+    
+    <div class="bottomnotes">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p><b>Note:</b> This weather app uses the OpenWeatherMap API, which provides current weather data for cities worldwide. The app fetches real-time weather information based on user input and displays it in an easy-to-read format. The temperature can be viewed in Kelvin, Fahrenheit, or Celsius, depending on user preference.</p>
+        <button class="surveyB" onclick="opensurvey()">Take our survey!(fullscreen)</button>
+        <button data-youform-open="hz1yrwrq" data-youform-position="center">Take our survey!(popup)</button>
+    </div>
+
+    
     <script src="index.js"></script>
 </body>
-
 </html>

@@ -183,3 +183,7 @@ p{
     display: flex;
     flex-direction: row;
 }
+
+.bottomnotes p{
+    font-size: 15px;
+}

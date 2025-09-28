@@ -192,3 +192,7 @@ tempInputForm.addEventListener("submit", async event => {
     displayWeatherInfo(await getWeatherData(city));
     console.log("Submitted");
 })
+
+function opensurvey(){
+    window.open("survey.html", "_blank");
+}
