@@ -25,7 +25,7 @@ body{
     margin-bottom: 20px;
 }
 
-button[type="submit"]{
+.weatherForm button[type="submit"]{
     padding: 10px 20px;
     font-weight: bold;
     font-size: 2rem;
@@ -36,7 +36,7 @@ button[type="submit"]{
     cursor: pointer;
 }
 
-button[type="submit"]:hover{
+.weatherForm button[type="submit"]:hover{
     background-color: hsla(122, 39%, 40%);
 }
 

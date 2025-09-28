@@ -36,8 +36,18 @@
         <p class="descDisplay">Clear Skies</p>
         <p class="wetherEmoji">☀️</p>
         <p class="errorDisplay">City not found. Please try again.</p>-->
-    </div>
 
+        
+    </div>
+    <form action="" method="get" class="tempInputForm">
+        <label for="temperatureInput0">Kelvins(K)</label>
+        <input type="radio" name="temperatureInput" id="temperatureInput0" class="temperatureInput" value="kelvin" checked>
+        <label for="temperatureInput1">Farenhite(°F)</label>
+        <input type="radio" name="temperatureInput" id="temperatureInput1" class="temperatureInput" value="farenhite">
+        <label for="temperatureInput2">Celcius(°C)</label>
+        <input type="radio" name="temperatureInput" id="temperatureInput2" class="temperatureInput" value="celcius">
+        <button onclick="updatetemp()" type="submit" class="submitTempInput">Update</button>
+    </form>
     <script src="index.js"></script>
 </body>
 </html>

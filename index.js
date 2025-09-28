@@ -1,6 +1,7 @@
 //WEATHER APP JS
 
 const weatherForm = document.querySelector(".weatherForm");
+const tempInputForm = document.querySelector(".tempInputForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
 const apiKey = "59a3eb8697593f10d47b4065ce7f31e7";
@@ -66,8 +67,19 @@ async function displayWeatherInfo(data) {
     const weatherEmoji = document.createElement("p");
     
     cityDisplay.textContent = city;
-    tempDisplay.textContent = `${((temp - 273.15) * (9/5) +32).toFixed(1)}°F`;
-    feellikeDisplay.textContent = `Feels Like: ${((feels_like - 273.15) * (9/5) +32).toFixed(1)}°F`;
+    updatetemp();
+    if(await updatetemp() === "kelvins"){
+        tempDisplay.textContent = `${(temp).toFixed(1)}K`;
+        feellikeDisplay.textContent = `Feels Like: ${(feels_like).toFixed(1)}K`;
+    }else if(await updatetemp() === "farenhite"){
+        tempDisplay.textContent = `${((temp - 273.15) * (9/5) +32).toFixed(1)}°F`;
+        feellikeDisplay.textContent = `Feels Like: ${((feels_like - 273.15) * (9/5) +32).toFixed(1)}°F`;
+    }else if(await updatetemp() === "celcius"){
+        tempDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
+        feellikeDisplay.textContent = `Feels Like: ${(feels_like - 273.15).toFixed(1)}°C`;
+    }
+    //tempDisplay.textContent = `${((temp - 273.15) * (9/5) +32).toFixed(1)}°F`;
+    //feellikeDisplay.textContent = `Feels Like: ${((feels_like - 273.15) * (9/5) +32).toFixed(1)}°F`;
     feellikeInfo.innerHTML = `<button class="feellikeB">?</button>` + `<p class="feellikeP">"Feels like" temperature accounts for factors beyond air temperature, like wind and humidity, that affect how hot or cold it actually feels to the human body</p>`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
     humidityInfo.innerHTML = `<button class="humidityB">?</button>` + `<p class="humidityP">Humidity is a measure of water vapor in the air.</p>`;
@@ -140,3 +152,43 @@ async function displayError(message) {
     card.style.display = "flex";
     card.appendChild(errorDisplay);
 }
+
+
+
+const updatetemp = async function(){
+
+    //if(tempDiv === null) return;
+    //if(tempDisplay === null) return;
+    //if(feellikeDiv === null) return;
+    //if(feellikeDisplay === null) return;
+    
+    const temperatureInput0 = document.getElementById("temperatureInput0");
+    const temperatureInput1 = document.getElementById("temperatureInput1");
+    const temperatureInput2 = document.getElementById("temperatureInput2");
+    const submitTempInput = document.querySelector(".submitTempInput");
+
+    if(temperatureInput0.checked){
+        console.log("Kelvins");
+        //tempDisplay.textContent = `${(temp).toFixed(1)}K`;
+        //feellikeDisplay.textContent = `Feels Like: ${(feels_like).toFixed(1)}K`;
+        return "kelvins";
+    }else if(temperatureInput1.checked){
+        console.log("Farenhite");
+        //tempDisplay.textContent = `${((temp - 273.15) * (9/5) +32).toFixed(1)}°F`;
+        //feellikeDisplay.textContent = `Feels Like: ${((feels_like - 273.15) * (9/5) +32).toFixed(1)}°F`;
+        return "farenhite";
+    }else if(temperatureInput2.checked){
+        console.log("Celcius");
+        //tempDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
+        //feellikeDisplay.textContent = `Feels Like: ${(feels_like - 273.15).toFixed(1)}°C`;
+        return "celcius";
+    }
+}
+
+tempInputForm.addEventListener("submit", async event => {
+    event.preventDefault();
+    updatetemp();
+    let city = cityInput.value;
+    displayWeatherInfo(await getWeatherData(city));
+    console.log("Submitted");
+})
