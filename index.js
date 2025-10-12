@@ -48,7 +48,8 @@ async function displayWeatherInfo(data) {
 
     const {name: city,
             main: {temp, humidity, feels_like},
-            weather: [{description, id}]} = data;
+            weather: [{description, id}]},
+            wind: {speed} = data;
 
     card.textContent = "";
     card.style.display = "flex";
