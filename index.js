@@ -63,6 +63,7 @@ async function displayWeatherInfo(data) {
     const humidityDiv = document.createElement("div");
     const humidityDisplay = document.createElement("p");
     const humidityInfo = document.createElement("div");
+    const windDisplay = document.createElement("p");
     //const br0 = document.createElement("br");
     const descDisplay = document.createElement("p");
     const weatherEmoji = document.createElement("p");
@@ -84,6 +85,7 @@ async function displayWeatherInfo(data) {
     feellikeInfo.innerHTML = `<button class="feellikeB">?</button>` + `<p class="feellikeP">"Feels like" temperature accounts for factors beyond air temperature, like wind and humidity, that affect how hot or cold it actually feels to the human body</p>`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
     humidityInfo.innerHTML = `<button class="humidityB">?</button>` + `<p class="humidityP">Humidity is a measure of water vapor in the air.</p>`;
+    windDisplay = `${speed}mph`;
     descDisplay.textContent = description;
     weatherEmoji.textContent = await getWeatherEmoji(id);
 
