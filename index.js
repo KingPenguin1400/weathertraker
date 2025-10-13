@@ -86,7 +86,7 @@ async function displayWeatherInfo(data) {
     feellikeInfo.innerHTML = `<button class="feellikeB">?</button>` + `<p class="feellikeP">"Feels like" temperature accounts for factors beyond air temperature, like wind and humidity, that affect how hot or cold it actually feels to the human body</p>`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
     humidityInfo.innerHTML = `<button class="humidityB">?</button>` + `<p class="humidityP">Humidity is a measure of water vapor in the air.</p>`;
-    windDisplay = `${speed}mph`;
+    windDisplay.innerHTML = `${speed}mph`;
     descDisplay.textContent = description;
     weatherEmoji.textContent = await getWeatherEmoji(id);
 
@@ -203,6 +203,7 @@ function opensurvey(){
     window.open("survey.html", "_blank");
 
 }
+
 
 
 
