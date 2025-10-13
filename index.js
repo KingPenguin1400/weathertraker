@@ -64,7 +64,7 @@ async function displayWeatherInfo(data) {
     const humidityDiv = document.createElement("div");
     const humidityDisplay = document.createElement("p");
     const humidityInfo = document.createElement("div");
-    let windDisplay = document.createElement("p");
+    const windDisplay = document.createElement("p");
     //const br0 = document.createElement("br");
     const descDisplay = document.createElement("p");
     const weatherEmoji = document.createElement("p");
@@ -203,6 +203,7 @@ function opensurvey(){
     window.open("survey.html", "_blank");
 
 }
+
 
 
 
