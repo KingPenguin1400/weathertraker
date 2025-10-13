@@ -1,12 +1,13 @@
 //WEATHER APP JS
 
 const weatherForm = document.querySelector(".weatherForm");
+const weatherForm1 = document.getElementById("weatherForm");
 const tempInputForm = document.querySelector(".tempInputForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
 const apiKey = "59a3eb8697593f10d47b4065ce7f31e7";
 
-weatherForm.addEventListener("submit", async event => {
+weatherForm1.addEventListener("submit", async event => {
 
     event.preventDefault();
 
@@ -202,3 +203,4 @@ function opensurvey(){
     window.open("survey.html", "_blank");
 
 }
+
