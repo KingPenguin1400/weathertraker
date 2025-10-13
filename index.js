@@ -7,7 +7,7 @@ const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
 const apiKey = "59a3eb8697593f10d47b4065ce7f31e7";
 
-weatherForm1.addEventListener("submit", async event => {
+weatherForm.addEventListener("submit", async event => {
 
     event.preventDefault();
 
@@ -203,5 +203,6 @@ function opensurvey(){
     window.open("survey.html", "_blank");
 
 }
+
 
 
