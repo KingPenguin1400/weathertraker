@@ -49,7 +49,7 @@ async function displayWeatherInfo(data) {
     const {name: city,
             main: {temp, humidity, feels_like},
             weather: [{description, id}]},
-            wind: {speed} = data;
+            wind: {speed} = data};
 
     card.textContent = "";
     card.style.display = "flex";
@@ -200,4 +200,5 @@ tempInputForm.addEventListener("submit", async event => {
 
 function opensurvey(){
     window.open("survey.html", "_blank");
+
 }
