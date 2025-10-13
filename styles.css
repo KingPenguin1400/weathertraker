@@ -79,7 +79,7 @@ p{
     size: 2rem;
 }
 
-.humidityDisplay{
+.humidityDisplay, .windDisplay{
     font-weight: bold;
     margin-bottom: 25px;
 }
@@ -186,4 +186,5 @@ p{
 
 .bottomnotes p{
     font-size: 15px;
+
 }
