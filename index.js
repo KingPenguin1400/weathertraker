@@ -97,6 +97,7 @@ async function displayWeatherInfo(data) {
     feellikeInfo.classList.add("feellikeInfo");
     humidityDiv.classList.add("humidityDiv");
     humidityDisplay.classList.add("humidityDisplay");
+    windDisplay.classList.add("windDisplay");
     descDisplay.classList.add("descDisplay");
     weatherEmoji.classList.add("weatherEmoji");
     humidityInfo.classList.add("humidityInfo");
@@ -118,6 +119,7 @@ async function displayWeatherInfo(data) {
     //card.appendChild(br0);
     //card.appendChild(humidityDisplay);
     //card.appendChild(humidityInfo);
+    card.appendChild(windDisplay);
     card.appendChild(descDisplay);
     card.appendChild(weatherEmoji);
 }
