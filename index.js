@@ -50,7 +50,7 @@ async function displayWeatherInfo(data) {
     const {name: city,
             main: {temp, humidity, feels_like},
             weather: [{description, id}],
-            wind: {speed}} = data;
+            wind: {speed, deg}} = data;
 
     card.textContent = "";
     card.style.display = "flex";
@@ -203,6 +203,7 @@ function opensurvey(){
     window.open("survey.html", "_blank");
 
 }
+
 
 
 
